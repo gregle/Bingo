@@ -1,0 +1,7 @@
+<div class="grid-wrapper" ng-controller="BingoCtrl as bingo">
+  <canvas height='1' id='confetti' width='1' ng-show="bingo.confetti" class="ng-hide" ng-click="bingo.reset()"></canvas>
+  <audio id="audiotag1" src="../../assets/party_horn.mp3" preload="auto"></audio>
+  <div class="row" ng-repeat="rows in bingo.grid">
+    <div class="tile" ng-repeat="tile in rows" ng-click="bingo.celebration()">{{tile.phrase}}<br/>{{tile.hit}}</div>
+  </div>
+</div>
