@@ -11,7 +11,9 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 }
 
 body {
+  margin: 0;
   padding: 0;
+  font-family: 'Roboto', Sans-Serif;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -36,66 +38,79 @@ body {
   }
 }
 
-/* Custom page footer */
-.footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
-}
-
 .container-narrow > hr {
   margin: 30px 0;
-}
-
-/* Main marketing message and sign up button */
-.jumbotron {
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5;
-
-  .btn {
-    font-size: 21px;
-    padding: 14px 24px;
-  }
-}
-
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0;
-
-  p + h4 {
-    margin-top: 28px;
-  }
 }
 
 .grid-wrapper {
   margin-left: auto;
   margin-right: auto;
+  max-width: 720px;
 }
 
-.tile{
-  display: inline-block;
-  background: #e7e7e7;
-  width: 125px;
-  height: 125px;
-  margin: 5px;
-  text-align: center;
-  &:hover{
-    box-shadow: 0 0 15px #cbc1d4;
+.tileRow{
+  margin-bottom: -5px;
+  .tile{
+    display: inline-block;
+    position: relative;
+    width: 20%;
+    padding-bottom: 20%;
+    margin-right: -1px;
+    margin-bottom: -5px;
+    background: #e7e7e7;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid #777777;
+    &:hover{
+      background: #cbc1d4;
+    }
+    p{
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      position: absolute;
+      top:50%;
+      left:50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  .tileSelected{
+    background: #9d9d9d;
+  }
+  .FishMoley, .FishMoley:hover{
+    background: url("../images/FishMoley.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: #9d9d9d;
+    border: 1px solid #777777;
+    p{
+      display: none;
+    }
   }
 }
+
 
 #confetti{
   position: absolute;
   left: 0;
   top: 0;
+  z-index: 1;
   height: 100%;
   width: 100%;
+}
+
+.navbar{
+  margin-bottom: 0;
+  border: none;
 }
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .container {
-    max-width: 730px;
+    max-width: 1200px;
   }
 
   /* Remove the padding we set earlier */
@@ -107,7 +122,7 @@ body {
   }
   /* Space out the masthead */
   .header {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {

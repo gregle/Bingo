@@ -2,9 +2,9 @@
 
 /**
  * @ngdoc overview
- * @name streamingoApp
+ * @name bingoApp
  * @description
- * # streamingoApp
+ * # bingoApp
  *
  * Main module of the application.
  */
