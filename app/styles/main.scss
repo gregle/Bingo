@@ -45,7 +45,7 @@ body {
 .grid-wrapper {
   margin-left: auto;
   margin-right: auto;
-  max-width: 720px;
+  max-width: 60%;
 }
 
 .tileRow{
@@ -57,12 +57,12 @@ body {
     padding-bottom: 20%;
     margin-right: -1px;
     margin-bottom: -5px;
-    background: #e7e7e7;
+    background: #E5E2EB;
     text-align: center;
     cursor: pointer;
     border: 1px solid #777777;
     &:hover{
-      background: #cbc1d4;
+      background: #BFB7CD;
     }
     p{
       -webkit-touch-callout: none;
@@ -76,15 +76,25 @@ body {
       left:50%;
       transform: translate(-50%, -50%);
     }
+    &.title{
+    padding-bottom: 5%;
+    background: #BFB7CD;
+    cursor: auto;
+    p{
+      font-weight: bold;
+    }&:hover{
+      background: #BFB7CD;
+    }
+  }
   }
   .tileSelected{
-    background: #9d9d9d;
+    background: #9589AD;
   }
   .FishMoley, .FishMoley:hover{
     background: url("../images/FishMoley.png");
     background-repeat: no-repeat;
     background-size: contain;
-    background-color: #9d9d9d;
+    background-color: #9589AD;
     border: 1px solid #777777;
     p{
       display: none;
