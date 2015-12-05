@@ -373,19 +373,21 @@ function StartConfetti() {
       cAF(this.interval);
     }
     this.update = function() {
-      var i = 0;
-      context.clearRect(0, 0, canvas.width, canvas.height);
-      for (i = 0; i < confettiPaperCount; i++) {
-        confettiPapers[i].Update(duration);
-        confettiPapers[i].Draw(context);
+      if(globalConfetti){
+        var i = 0;
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        for (i = 0; i < confettiPaperCount; i++) {
+          confettiPapers[i].Update(duration);
+          confettiPapers[i].Draw(context);
+        }
+        for (i = 0; i < confettiRibbonCount; i++) {
+          confettiRibbons[i].Update(duration);
+          confettiRibbons[i].Draw(context);
+        }
+        this.interval = rAF(function() {
+          confetti.update();
+        });
       }
-      for (i = 0; i < confettiRibbonCount; i++) {
-        confettiRibbons[i].Update(duration);
-        confettiRibbons[i].Draw(context);
-      }
-      this.interval = rAF(function() {
-        confetti.update();
-      });
     }
   }
   var confetti = new confetti.Context('confetti');

@@ -1,5 +1,5 @@
 'use strict';
-
+var globalConfetti = false;
 function BingoCtrl($http) 
 {
 	$http.get('assets/phrases.json')
@@ -99,11 +99,13 @@ function BingoCtrl($http)
 	vm.celebration = function() {
 		document.getElementById('audiotag1').play();
 		vm.confetti = true;
+		globalConfetti = true;
 		StartConfetti(); // jshint ignore:line
 	};
 
 	vm.reset = function() {
 		vm.confetti = false;
+		globalConfetti = false;
 		vm.loadGrid();
 	};
 }
