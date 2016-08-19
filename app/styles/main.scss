@@ -14,6 +14,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Roboto', Sans-Serif;
+  color: #ffffff;
+  background-color: #BFB7CD;
 }
 
 p{
@@ -32,7 +34,15 @@ p{
 .header {
   border-bottom: 1px solid #e5e5e5;
   margin-bottom: 10px;
-
+  background-color: #7a19b4;
+  .navbar-brand{
+    color: #ffffff;
+  }
+  .navbar-default{
+    background-color: #7a19b4;
+  }
+  .rules{
+    display: inline-block;}
   /* Make the masthead heading the same height as the navigation */
   h3 {
     margin-top: 0;
@@ -66,12 +76,12 @@ p{
     padding-bottom: 20%;
     margin-right: -1px;
     margin-bottom: -5px;
-    background: #E5E2EB;
+    background: #7a19b4;
     text-align: center;
     cursor: pointer;
     border: 1px solid #777777;
     &:hover{
-      background: #BFB7CD;
+      background: #59028f;
     }
     p{
       -webkit-touch-callout: none;
@@ -87,7 +97,7 @@ p{
     }
     &.title{
     padding-bottom: 5%;
-    background: #BFB7CD;
+    background: #59028f;
     cursor: auto;
     p{
       font-weight: bold;
@@ -97,13 +107,13 @@ p{
   }
   }
   .tileSelected{
-    background: #9589AD;
+    background: #59028f;
   }
   .FishMoley, .FishMoley:hover{
     background: url("../images/FishMoley.png");
     background-repeat: no-repeat;
     background-size: contain;
-    background-color: #9589AD;
+    background-color: #59028f;
     border: 1px solid #777777;
     p{
       display: none;
