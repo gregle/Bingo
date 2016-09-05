@@ -28,6 +28,9 @@ function AdminCtrl($http)
 			tile.hit = !tile.hit;
 		}
 	};
+	vm.reset = function() {
+		vm.loadGrid();
+	};
 }
 
 /**
