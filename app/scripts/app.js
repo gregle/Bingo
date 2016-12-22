@@ -23,5 +23,8 @@ angular
         templateUrl: 'views/main.html',
         controller: 'BingoCtrl',
         controllerAs: 'main'
+      })
+      .otherwise({
+        redirectTo: '/#'
       });
   });
