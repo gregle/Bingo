@@ -19,14 +19,14 @@ angular
   ])
   .config(function ($routeProvider) {
     $routeProvider
-      .when('/:seed?', {
-        templateUrl: 'views/main.html',
-        controller: 'BingoCtrl',
-        controllerAs: 'main'
-      })
       .when('/admin',{
         templateUrl: 'views/admin.html',
         controller: 'AdminCtrl',
+        controllerAs: 'main'
+      })
+      .when('/:seed?', {
+        templateUrl: 'views/main.html',
+        controller: 'BingoCtrl',
         controllerAs: 'main'
       })
       .otherwise({
