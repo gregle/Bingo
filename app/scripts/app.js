@@ -24,6 +24,11 @@ angular
         controller: 'BingoCtrl',
         controllerAs: 'main'
       })
+      .when('/admin',{
+        templateUrl: 'views/admin.html',
+        controller: 'AdminCtrl',
+        controllerAs: 'main'
+      })
       .otherwise({
         redirectTo: '/#'
       });
