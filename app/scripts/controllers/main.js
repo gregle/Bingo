@@ -1,13 +1,14 @@
 'use strict';
 var globalConfetti = false;
-function BingoCtrl($http) 
+function BingoCtrl($http, $routeParams) 
 {
+	var vm = this;
 	$http.get('assets/phrases.json')
 		.then(function(res){
 			vm.bingoInfo = res.data;
 			vm.loadGrid();
 		});
-	var vm = this;
+
 	vm.title = 'bingo';
 	vm.confetti = false;
 	vm.grid = [
@@ -19,6 +20,10 @@ function BingoCtrl($http)
 		];
 
 	vm.ShufflePhrases = function(){
+		//Seed the random function
+		if($routeParams.seed){
+			Math.seedrandom($routeParams.seed);
+		}
 		var i = vm.bingoInfo.phrases.length, j, temp;
 		while(--i > 0){
 		    j = Math.floor(Math.random() * (i+1)); // Get random number ranging between 0 and i
@@ -120,4 +125,4 @@ function BingoCtrl($http)
 angular.module('bingoApp')
   .controller('BingoCtrl', BingoCtrl);
 
-  BingoCtrl.$inject = ['$http'];
+  BingoCtrl.$inject = ['$http', '$routeParams'];

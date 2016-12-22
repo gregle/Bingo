@@ -19,12 +19,9 @@ angular
   ])
   .config(function ($routeProvider) {
     $routeProvider
-      .when('/', {
+      .when('/:seed?', {
         templateUrl: 'views/main.html',
         controller: 'BingoCtrl',
         controllerAs: 'main'
-      })
-      .otherwise({
-        redirectTo: '/'
       });
   });
