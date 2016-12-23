@@ -350,8 +350,8 @@ function autoseed(seed) {
     global.crypto.getRandomValues(seed = new Uint8Array(width));
     return tostring(seed);
   } catch (e) {
-    return [+new Date, global, (seed = global.navigator) && seed.plugins,
-      global.screen, tostring(pool)];
+    return [+new Date, window, (seed = window.navigator) && seed.plugins,
+      window.screen, tostring(pool)];
   }
 }
 
