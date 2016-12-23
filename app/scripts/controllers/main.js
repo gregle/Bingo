@@ -22,7 +22,7 @@ function BingoCtrl($http, $routeParams)
 	vm.ShufflePhrases = function(){
 		//Seed the random function
 		if($routeParams.seed){
-			Math.seedrandom($routeParams.seed);
+			Math.seedrandom($routeParams.seed.toLowerCase());
 		}
 		var i = vm.bingoInfo.phrases.length, j, temp;
 		while(--i > 0){
@@ -111,7 +111,18 @@ function BingoCtrl($http, $routeParams)
 	vm.reset = function() {
 		vm.confetti = false;
 		globalConfetti = false;
-		vm.loadGrid();
+		for (var i = 0; i < vm.grid.length; i++){
+			for (var j = 0; j <vm.grid[i].length; j++)
+			{
+				if (i === 2 && j === 2){
+					vm.grid[i][j].phrase = vm.bingoInfo.freeSpace;
+					vm.grid[i][j].hit = true;
+				}
+				else{
+					vm.grid[i][j].hit=false;
+				}
+			}
+		}
 	};
 }
 

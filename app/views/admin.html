@@ -1,4 +1,5 @@
 <div class="grid-wrapper" ng-controller="AdminCtrl as bingo">
+	<span>{{bingo.seed}}</span>
   <div class="tileRow" ng-repeat="rows in bingo.grid">
     <div class="tile" ng-class="{tileSelected:  tile.hit, FishMoley: tile.phrase === bingo.bingoInfo.freeSpace}" ng-repeat="tile in rows" ng-click="bingo.selectTile(tile)"><p>{{tile.phrase}}</p></div>
   </div>

@@ -1,15 +1,29 @@
 'use strict';
 function AdminCtrl($http) 
 {
+	var vm = this;
 	$http.get('assets/phrases.json')
 		.then(function(res){
 			vm.bingoInfo = res.data;
 			vm.loadGrid();
 		});
-	var vm = this;
 	vm.title = 'bingo';
 	vm.grid = []; 
+	vm.seed = Math.random().toString(36).substring(22);
+
+	vm.ShufflePhrases = function(){
+		//Seed the random function
+		Math.seedrandom(vm.seed);
+		var i = vm.bingoInfo.phrases.length, j, temp;
+		while(--i > 0){
+		    j = Math.floor(Math.random() * (i+1)); // Get random number ranging between 0 and i
+		    temp = vm.bingoInfo.phrases[j];
+		    vm.bingoInfo.phrases[j] = vm.bingoInfo.phrases[i];
+		    vm.bingoInfo.phrases[i] = temp;
+		}
+	};
 	vm.loadGrid = function(){
+		vm.ShufflePhrases();
 		var k = 0;
 		var length = vm.bingoInfo.phrases.length / 5;
 		for (var i = 0; i < length ; i++){
