@@ -1,6 +1,12 @@
 <div class="grid-wrapper" ng-controller="AdminCtrl as bingo">
-	<span>{{bingo.seed}}</span>
-  <div class="tileRow" ng-repeat="rows in bingo.grid">
-    <div class="tile" ng-class="{tileSelected:  tile.hit, FishMoley: tile.phrase === bingo.bingoInfo.freeSpace}" ng-repeat="tile in rows" ng-click="bingo.selectTile(tile)"><p>{{tile.phrase}}</p></div>
-  </div>
+	<div class="admin-cntrl-wrapper">
+		<input type="text" ng-model="bingo.seed" ng-keypress="($event.which === 13)?bingo.setSeed():0"></input>
+		<div class="button-wrapper">
+			<button ng-click="bingo.setRandomSeed()">new seed</button>
+			<button ng-click="bingo.setSeed()">set seed</button>
+		</div>
+	</div>
+	<div class="tileRow" ng-repeat="rows in bingo.grid">
+		<div class="tile" ng-class="{tileSelected:  tile.hit, FishMoley: tile.phrase === bingo.bingoInfo.freeSpace}" ng-repeat="tile in rows" ng-click="bingo.selectTile(tile)"><p>{{tile.phrase}}</p></div>
+	</div>
 </div>

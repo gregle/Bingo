@@ -12,11 +12,11 @@ function BingoCtrl($http, $routeParams)
 	vm.title = 'bingo';
 	vm.confetti = false;
 	vm.grid = [
-		[{phrase: 'test', hit: false}, {phrase: 'test', hit: false}, {phrase: 'test', hit: false}, {phrase: 'test', hit: false}, {phrase: 'test', hit: false}],
-		[{phrase: 'test', hit: false}, {phrase: 'test', hit: false}, {phrase: 'test', hit: false}, {phrase: 'test', hit: false}, {phrase: 'test', hit: false}],
-		[{phrase: 'test', hit: false}, {phrase: 'test', hit: false}, {phrase: 'test', hit: false}, {phrase: 'test', hit: false}, {phrase: 'test', hit: false}],
-		[{phrase: 'test', hit: false}, {phrase: 'test', hit: false}, {phrase: 'test', hit: false}, {phrase: 'test', hit: false}, {phrase: 'test', hit: false}],
-		[{phrase: 'test', hit: false}, {phrase: 'test', hit: false}, {phrase: 'test', hit: false}, {phrase: 'test', hit: false}, {phrase: 'test', hit: false}]
+		[{phrase: 'loading', hit: false}, {phrase: 'loading', hit: false}, {phrase: 'loading', hit: false}, {phrase: 'loading', hit: false}, {phrase: 'loading', hit: false}],
+		[{phrase: 'loading', hit: false}, {phrase: 'loading', hit: false}, {phrase: 'loading', hit: false}, {phrase: 'loading', hit: false}, {phrase: 'loading', hit: false}],
+		[{phrase: 'loading', hit: false}, {phrase: 'loading', hit: false}, {phrase: 'loading', hit: false}, {phrase: 'loading', hit: false}, {phrase: 'loading', hit: false}],
+		[{phrase: 'loading', hit: false}, {phrase: 'loading', hit: false}, {phrase: 'loading', hit: false}, {phrase: 'loading', hit: false}, {phrase: 'loading', hit: false}],
+		[{phrase: 'loading', hit: false}, {phrase: 'loading', hit: false}, {phrase: 'loading', hit: false}, {phrase: 'loading', hit: false}, {phrase: 'loading', hit: false}]
 		];
 
 	vm.ShufflePhrases = function(){
